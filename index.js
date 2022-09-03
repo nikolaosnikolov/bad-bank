@@ -13,7 +13,7 @@ function Spa() {
         <HashRouter>
             <NavBar />
             <UserContext.Provider value={Memo}>
-                <div className="container" style={{ padding: "20px" }}>
+                <div className="container">
                     <Route path="/" exact component={Home} />
                     <Route path="/CreateAccount/" component={CreateAccount} />
                     <Route path="/login/" component={Login} />

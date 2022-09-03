@@ -14,6 +14,80 @@ body {
     background-color: burlywood !important;
 }
 
-#home-nav, #createaccount-nav, #login-nav, #deposit-nav, #withdraw-nav, #alldata-nav {
-    color: rgba(0,0,0,.6);
+#home-nav,
+#createaccount-nav,
+#login-nav,
+#deposit-nav,
+#withdraw-nav,
+#alldata-nav {
+    color: rgba(0, 0, 0, .6);
 }
+
+.imageDiv {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card-img-top {
+    height: 10rem;
+    width: 10rem;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    padding: 2rem;
+}
+
+.card {
+    width: 30rem;
+    height: 30rem;
+    background-color: darkgray;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.inputName,
+.inputEmail,
+.inputPassword {
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 5px;
+    border: 1px;
+}
+
+.submitButton {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    width: 10rem;
+}
+
+/* .submitNotDisabled {
+    background-color: green;
+    color: white;
+}
+
+.submitDisabled {
+    background-color: none;
+    color: black;
+} */
