@@ -45,19 +45,18 @@ body {
 }
 
 .img-fluid {
-    padding: 2rem;
+    padding: 3rem;
 }
 
-.card {
-    width: 30rem;
-    height: 30rem;
-    background-color: darkgray;
+.card-header {
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: 1rem;
     align-items: center;
     justify-content: center;
 }
@@ -81,13 +80,3 @@ body {
     padding: 1rem;
     width: 10rem;
 }
-
-/* .submitNotDisabled {
-    background-color: green;
-    color: white;
-}
-
-.submitDisabled {
-    background-color: none;
-    color: black;
-} */

@@ -1,11 +1,14 @@
 function Deposit() {
-    const [deposit, setDeposit] = React.useState(0)
+    const [deposit, setDeposit] = React.useState(0);
+    const [status, setStatus] = React.useState('');
+    const [wholeMoney, setWholeMoney] = React.useState(Memo.activeUser ? Memo.activeUser.balance : 0);
     const ctx = React.useContext(UserContext)
 
     console.log('Memo.activeUser', Memo.activeUser)
-    const depositfn = () => {
+    const depositFn = () => {
         if (Memo.activeUser) {
             Memo.activeUser.balance += deposit
+            setWholeMoney(Memo.activeUser.balance)
             console.log('newDeposit', Memo.activeUser.balance)
 
             const record = {
@@ -22,10 +25,23 @@ function Deposit() {
             console.log('user must log in')
         }
     }
+
     return (
+       <Card
+       bgcolor='secondary'
+       header='Deposit'
+       status={status}
+       body={(
         <>
-            <input placeholder="Deposit" onChange={(e) => setDeposit(parseFloat(e.target.value))}></input>
-            <button onClick={depositfn}>Deposit</button>
+            <div>{Memo.activeUser ? wholeMoney : 'There is no user logged in'}</div>
+            <input placeholder="Deposit's amount" onChange={(e) => setDeposit(parseFloat(e.target.value))}></input>
+            <button onClick={depositFn}>Deposit</button>
         </>
+       )}
+       />
+        // <>
+        //     <input placeholder="Deposit" onChange={(e) => setDeposit(parseFloat(e.target.value))}></input>
+        //     <button onClick={depositfn}>Deposit</button>
+        // </>
     );
 }

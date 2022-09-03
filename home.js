@@ -1,6 +1,8 @@
 function Home() {
     return (
         <Card
+            height="30rem"
+            width="18rem"
             txtcolor="black"
             header="Bad Bank Application"
             title="Welcome to the bank"
