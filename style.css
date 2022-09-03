@@ -1,0 +1,19 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar {
+    padding: 1rem;
+    background-color: burlywood !important;
+}
+
+#home-nav, #createaccount-nav, #login-nav, #deposit-nav, #withdraw-nav, #alldata-nav {
+    color: rgba(0,0,0,.6);
+}

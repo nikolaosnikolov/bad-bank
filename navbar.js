@@ -1,6 +1,10 @@
-function NavBar(){
-    return(
-      <>
+function NavBar() {
+  // const highlight = (eventHome, eventAccount, ) => {
+  //   event.target.style.fontWeight = '700'
+  //   event.target.style.color = 'white'
+  // }
+  return (
+    <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a className="navbar-brand" href="#">BadBank</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,26 +13,26 @@ function NavBar(){
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#/CreateAccount/">Create Account</a>
+              <a id="home-nav" className="nav-link" href="#/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/login/">Login</a>
+              <a id="createaccount-nav" className="nav-link" href="#/CreateAccount/">Create Account</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/deposit/">Deposit</a>
+              <a id="login-nav" className="nav-link" href="#/login/">Login</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/withdraw/">Withdraw</a>
+              <a id="deposit-nav" className="nav-link" href="#/deposit/">Deposit</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/balance/">Balance</a>
+              <a id="withdraw-nav" className="nav-link" href="#/withdraw/">Withdraw</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#/alldata/">AllData</a>
-            </li>          
+              <a id="alldata-nav" className="nav-link" href="#/alldata/">AllData</a>
+            </li>
           </ul>
         </div>
       </nav>
-      </>
-    );
-  }
+    </>
+  );
+}
