@@ -6,6 +6,15 @@ function Deposit() {
 
     console.log('Memo.activeUser', Memo.activeUser)
     const depositFn = () => {
+        if (isNaN(deposit)) {
+            toString(deposit)
+            console.log('Error in submit: Deposit value is not a number')
+            return;
+        }
+        if (deposit < 0) {
+            console.log('Error in submit: User is trying to deposit negative value')
+            return;
+        }
         if (Memo.activeUser) {
             Memo.activeUser.balance += deposit
             setWholeMoney(Memo.activeUser.balance)
@@ -35,13 +44,10 @@ function Deposit() {
         <>
             <div>{Memo.activeUser ? wholeMoney : 'There is no user logged in'}</div>
             <input placeholder="Deposit's amount" onChange={(e) => setDeposit(parseFloat(e.target.value))}></input>
+            <div style={{ width: '100%', marginLeft: '10px', color: 'red' }}></div>
             <button onClick={depositFn}>Deposit</button>
         </>
        )}
        />
-        // <>
-        //     <input placeholder="Deposit" onChange={(e) => setDeposit(parseFloat(e.target.value))}></input>
-        //     <button onClick={depositfn}>Deposit</button>
-        // </>
     );
 }
