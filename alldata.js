@@ -1,10 +1,33 @@
-function AllData(){
-    const ctx = React.useContext(UserContext);
+function AllData() {
+  const ctx = React.useContext(UserContext);
+
+  const records = Memo.records.filter(item => item.uid === Memo.activeUser.uid)
+
+  const allDataReport = records.map(item => {
+    const { datetime, user, action, amount } = item
     return (
-      <>
-      <h5>All Data in Store</h5>
-      {JSON.stringify(ctx)}<br/>
-      </>
-    );
-  }
-  
+    <tr key={datetime}>
+      <th>{datetime}</th>
+      <th>{user}</th>
+      <th>{action}</th>
+      <th>{amount}</th>
+    </tr>
+    )
+  })
+
+  return (
+    <>
+        <table className="table">
+          <thead>
+            <tr>
+              <th scope="col">Date</th>
+              <th scope="col">User</th>
+              <th scope="col">Action</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>{allDataReport}</tbody>
+        </table>
+    </>
+  );
+}

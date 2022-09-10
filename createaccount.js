@@ -44,7 +44,7 @@ function CreateAccount() {
       setPasswordMessage('')
     }
 
-    ctx.users.push({ name, email, password, balance: 100 });
+    ctx.users.push({ name, email, password, uid: Fn.uuidv4(), balance: 100 });
     setShow(false);
   }
 

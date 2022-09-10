@@ -31,7 +31,9 @@ function Deposit() {
                 user: Memo.activeUser.name,
                 action: 'deposit',
                 amount: deposit,
-                balance: Memo.activeUser.balance
+                balance: Memo.activeUser.balance,
+                email: Memo.activeUser.email,
+                uid: Memo.activeUser.uid
             }
             console.log('record', record)
             Memo.records.push(record)
