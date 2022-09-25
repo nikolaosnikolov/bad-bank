@@ -80,3 +80,7 @@ body {
     padding: 1rem;
     width: 10rem;
 }
+
+.navbar-brand {
+    cursor: pointer;
+}
