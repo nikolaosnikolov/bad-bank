@@ -33,8 +33,7 @@ function Withdraw() {
       console.log('newWithdraw', Memo.activeUser.balance)
 
       const record = {
-        // datetime: new Date().toISOString().substring(0, 10),
-        datetime: new Date().toISOString(),
+        datetime: new Date().toISOString().substring(0, 10),
         user: Memo.activeUser.name,
         action: 'withdraw',
         amount: withdraw,

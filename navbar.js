@@ -1,8 +1,6 @@
 function NavBar() {
-  // const highlight = (eventHome, eventAccount, ) => {
-  //   event.target.style.fontWeight = '700'
-  //   event.target.style.color = 'white'
-  // }
+  const [clicked, setClicked] = React.useState('')
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -13,24 +11,53 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a id="home-nav" className="nav-link" href="#/">Home</a>
+              <a id="home-nav" className="nav-link" href="#/" onClick={(e) => {
+                clicked != '' && (clicked.style.color = 'black')
+                setClicked(e.target)
+                e.target.style.color = 'white'
+              }}>Home</a>
             </li>
             <li className="nav-item">
-              <a id="createaccount-nav" className="nav-link" href="#/CreateAccount/">Create Account</a>
+              <a id="createaccount-nav" className="nav-link" href="#/CreateAccount/" onClick={(e) => {
+                clicked != '' && (clicked.style.color = 'black')
+                setClicked(e.target)
+                e.target.style.color = 'white'
+              }}>Create Account</a>
             </li>
             <li className="nav-item">
-              <a id="login-nav" className="nav-link" href="#/login/">Login</a>
+              <a id="deposit-nav" className="nav-link" href="#/deposit/" onClick={(e) => {
+                clicked != '' && (clicked.style.color = 'black')
+                setClicked(e.target)
+                e.target.style.color = 'white'
+              }}>Deposit</a>
             </li>
             <li className="nav-item">
-              <a id="deposit-nav" className="nav-link" href="#/deposit/">Deposit</a>
+              <a id="withdraw-nav" className="nav-link" href="#/withdraw/" onClick={(e) => {
+                clicked != '' && (clicked.style.color = 'black')
+                setClicked(e.target)
+                e.target.style.color = 'white'
+              }}>Withdraw</a>
             </li>
             <li className="nav-item">
-              <a id="withdraw-nav" className="nav-link" href="#/withdraw/">Withdraw</a>
-            </li>
-            <li className="nav-item">
-              <a id="alldata-nav" className="nav-link" href="#/alldata/">AllData</a>
+              <a id="alldata-nav" className="nav-link" href="#/alldata/" onClick={(e) => {
+                clicked != '' && (clicked.style.color = 'black')
+                setClicked(e.target)
+                e.target.style.color = 'white'
+              }}>AllData</a>
             </li>
           </ul>
+          <a style={{
+            right: '0',
+            position: 'absolute',
+            fontSize: '1.1rem',
+          }} className="nav-link" href="#/login/">Login</a>
+          <a style={{
+            right: '50px',
+            position: 'absolute',
+            fontSize: '1.1rem',
+          }} className="nav-link" href="#/" onClick={() => {
+            Memo.activeUser && delete Memo.activeUser
+          }}>Logout</a>
         </div>
       </nav>
     </>

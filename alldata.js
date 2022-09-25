@@ -6,7 +6,7 @@ function AllData() {
   const allDataReport = records.map(item => {
     const { datetime, user, action, amount } = item
     return (
-    <tr key={datetime}>
+    <tr key={Fn.uuidv4()}>
       <th>{datetime}</th>
       <th>{user}</th>
       <th>{action}</th>

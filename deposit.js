@@ -27,7 +27,7 @@ function Deposit() {
             console.log('newDeposit', Memo.activeUser.balance)
 
             const record = {
-                datetime: new Date().toISOString(),
+                datetime: new Date().toISOString().substring(0, 10),
                 user: Memo.activeUser.name,
                 action: 'deposit',
                 amount: deposit,
