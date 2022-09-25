@@ -1,16 +1,26 @@
 function NavBar() {
   const [clicked, setClicked] = React.useState('')
+  const [isHovering, setIsHovering] = React.useState(false)
+
+  const handleMouseOver = () => {
+    setIsHovering(true)
+  }
+
+  const handleMouseOut = () => {
+    setIsHovering(false)
+  }
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" onClick={() => {location.reload()}}>BadBank</a>
+        <a className="navbar-brand">BadBank</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a id="home-nav" className="nav-link" href="#/" onClick={(e) => {
+            <li style={{position: "relative"}} className="nav-item">
+              <a id="home-nav" className="nav-link" href="#/" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} onClick={(e) => {
                 clicked != '' && (
                   clicked.style.color = 'rgba(0, 0, 0, .6)',
                   clicked.style.fontWeight = 'normal'
@@ -19,6 +29,7 @@ function NavBar() {
                 e.target.style.color = 'white'
                 e.target.style.fontWeight = '600'
               }}>Home</a>
+              {isHovering && <div style={{position:"absolute", top: '3rem', left: '0', border: '2px solid black', borderRadius: '5px', padding: '1rem', fontSize: '1rem'}}>ICXCNIKA</div>}
             </li>
             <li className="nav-item">
               <a id="createaccount-nav" className="nav-link" href="#/CreateAccount/" onClick={(e) => {

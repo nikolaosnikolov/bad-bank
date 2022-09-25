@@ -82,5 +82,5 @@ body {
 }
 
 .navbar-brand {
-    cursor: pointer;
+    cursor: default;
 }
